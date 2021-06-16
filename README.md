@@ -5,6 +5,17 @@
 [![CI](https://github.com/sero01000/mega/workflows/Continuous%20Integration/badge.svg)](https://github.com/sero01000/mega/actions)
 [![Coverage Status](https://coveralls.io/repos/github/sero01000/mega/badge.svg?branch=main)](https://coveralls.io/github/sero01000/mega?branch=main)
 
+
+## Usage
+
+ ```javascriptfunction test() { console.log("look ma’, no spaces");}```
+
+## Task list
+- [x] Authentication api
+- [ ] Get all files function
+- [ ] Download file function
+- [ ] ∞
+
 ## Installation
 
 ### Cargo
