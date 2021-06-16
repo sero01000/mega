@@ -1,6 +1,6 @@
 [package]
 name = "mega_api"
-version = "0.1.0"
+version = "0.1.1"
 description = "Mega.nz api"
 keywords = ["mega", "data", "api"]
 categories = ["api-bindings","web-programming"]

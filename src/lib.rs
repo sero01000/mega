@@ -6,7 +6,7 @@ use ring::pbkdf2;
 const NONZERO100000: std::option::Option<std::num::NonZeroU32> = std::num::NonZeroU32::new(100_000);
 static PBKDF2_ALG: pbkdf2::Algorithm = pbkdf2::PBKDF2_HMAC_SHA512;
 
-struct Mega {}
+pub struct Mega {}
 
 #[allow(dead_code)]
 impl Mega {

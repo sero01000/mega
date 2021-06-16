@@ -10,12 +10,13 @@
 
 
 ```
-use Mega;
+use mega_api;
+
 fn main() {
     let email="test@email.com";
     let password="test";
-    let account=Mega::login(&email,password);
-    println!("{:?}",acc1);
+    let account=Mega::login(email,password);
+    println!("{:?}", account);
 }
 ```
 
