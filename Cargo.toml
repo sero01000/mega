@@ -1,0 +1,21 @@
+[package]
+name = "mega"
+version = "0.1.0"
+description = "Mega.nz api"
+keywords = ["mega", "data", "api", "mega.nz"]
+categories = ["api"]
+readme = "README.md"
+authors = ["sero01000"]
+edition = "2018"
+repository = "https://github.com/sero01000/mega"
+license = "MIT/Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = { version = "*", features = ["blocking"] }
+rand="*"
+aes="*"
+block-modes="*"
+base64="*"
+ring="*"
