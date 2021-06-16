@@ -1,5 +1,5 @@
 [package]
-name = "mega"
+name = "mega_api"
 version = "0.1.0"
 description = "Mega.nz api"
 keywords = ["mega", "data", "api"]
