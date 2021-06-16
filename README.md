@@ -10,7 +10,7 @@
 
 
 ```
-use::Mega;
+use Mega;
 fn main() {
     let email="test@email.com";
     let password="test";

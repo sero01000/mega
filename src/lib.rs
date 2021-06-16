@@ -8,6 +8,7 @@ static PBKDF2_ALG: pbkdf2::Algorithm = pbkdf2::PBKDF2_HMAC_SHA512;
 
 struct Mega {}
 
+#[allow(dead_code)]
 impl Mega {
     fn split_salt(start: &str, end: &str, line: &str) -> Option<String> {
         let split1 = line.splitn(2, start).collect::<Vec<&str>>();
@@ -121,7 +122,7 @@ impl Mega {
             "https://g.api.mega.co.nz/cs?id={}",
             rand::thread_rng().gen_range(0..10000000)
         );
-        if let Ok(req1) = Self::post_mega(&url, post_data.to_string()) {
+        if let Ok(req1) = Self::post_mega(&url, post_data) {
             if req1.contains("\"v\":1") {
                 let key = Self::prepare_key(password);
                 let hash = Self::generate_user_handle(email, &key);
