@@ -8,7 +8,16 @@
 
 ## Usage
 
- ```javascriptfunction test() { console.log("look ma’, no spaces");}```
+
+```
+use::Mega;
+fn main() {
+    let email="test@email.com";
+    let password="test";
+    let account=Mega::login(&email,password);
+    println!("{:?}",acc1);
+}
+```
 
 ## Task list
 - [x] Authentication api
