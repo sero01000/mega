@@ -3,7 +3,6 @@
 [![Crates.io](https://img.shields.io/crates/v/mega_api.svg)](https://crates.io/crates/mega_api)
 [![Docs.rs](https://docs.rs/mega_api/badge.svg)](https://docs.rs/mega_api)
 [![CI](https://github.com/sero01000/mega/workflows/Continuous%20Integration/badge.svg)](https://github.com/sero01000/mega/actions)
-[![Coverage Status](https://coveralls.io/repos/github/sero01000/mega/badge.svg?branch=main)](https://coveralls.io/github/sero01000/mega?branch=main)
 
 
 ## Usage
