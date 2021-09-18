@@ -63,21 +63,24 @@ impl Mega {
     }
 
     fn hmac_hash(password: &str, salt: &str) -> Result<[u8; 32], std::io::Error> {
-        if let Ok(salt_work) = base64::decode(salt) {
-            let mut result: [u8; 32] = [0u8; 32];
-            pbkdf2::derive(
-                PBKDF2_ALG,
-                NONZERO100000.unwrap(),
-                &salt_work,
-                password.as_bytes(),
-                &mut result,
-            );
-            Ok(result)
-        } else {
-            Err(std::io::Error::new(
-                std::io::ErrorKind::Other,
-                "Error in salt",
-            ))
+        match base64::decode_config(salt, base64::URL_SAFE_NO_PAD){
+            Ok(salt_work)=>{
+                let mut result: [u8; 32] = [0u8; 32];
+                pbkdf2::derive(
+                    PBKDF2_ALG,
+                    NONZERO100000.unwrap(),
+                    &salt_work,
+                    password.as_bytes(),
+                    &mut result,
+                );
+                Ok(result)
+            },
+            Err(e)=>{
+                Err(std::io::Error::new(
+                    std::io::ErrorKind::Other,
+                    format!("{:?}|{:?}", e,salt),
+                ))
+            }
         }
     }
 
@@ -94,7 +97,7 @@ impl Mega {
             "[{{\"a\": \"us\", \"user\": \"{}\", \"uh\": \"{}\"}}]",
             email, hash
         );
-        if let Ok(req2) = Self::post_mega(&url, post_data) {
+        if let Ok(req2) = Self::post_mega(url, post_data) {
             if req2.contains("[-13]") {
                 Err(std::io::Error::new(
                     std::io::ErrorKind::InvalidInput,
